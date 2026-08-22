@@ -26,10 +26,12 @@ Pick whichever is easiest:
 
 ## What happens after you file
 
-A maintainer triages every report. For eligible bugs, Codna's own automated fixer can pick it up
-and open a verified fix PR in the right repo — the same pipeline that fixes issues inside our own
-projects, pointed at whatever you reported. That's a deliberate human-in-the-loop step, not
-something that fires on every issue automatically.
+The product you picked in the dropdown gets applied as a `product:<name>` label automatically —
+that's what routes it. A maintainer triages every report from there. For eligible bugs, Codna's
+own automated fixer can pick it up and open a verified fix PR in the right repo — the same
+pipeline that fixes issues inside our own projects, pointed at whatever you reported. That's a
+deliberate human-in-the-loop step (a maintainer applies one label to trigger it), not something
+that fires on every issue automatically.
 
 ## Security vulnerabilities
 
