@@ -1,0 +1,62 @@
+name: Bug report
+description: Something in Algenta, Codna, Telys, or Sqai isn't working as expected.
+title: "[bug] "
+labels: ["needs-triage"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Which product?
+      options:
+        - algenta
+        - codna
+        - telys
+        - sqai
+        - accounts (billing / login / devices)
+        - docs
+        - not sure
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: "`codna --version`, the SDK/package version, or the date you last used it."
+      placeholder: e.g. codna 0.2.12
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: OS + architecture, e.g. "macOS 15 arm64" or "Ubuntu 24.04 in a GitHub Actions runner".
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect instead? Be specific — this is what a fixing agent reads first.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: The exact commands or code that trigger it, in order.
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output or logs
+      description: Paste the error text. Remove anything secret first — this issue is public.
+      render: text
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: >-
+        Filing this from a script or an AI agent? `codna report` (CLI) and the `codna_report_bug`
+        MCP tool submit here with the same fields — see this repo's README for the automated path.
