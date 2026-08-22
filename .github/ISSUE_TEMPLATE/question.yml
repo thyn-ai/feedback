@@ -1,0 +1,25 @@
+name: Question
+description: Ask a usage question about any thyn-ai product.
+title: "[question] "
+labels: ["question", "needs-triage"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Which product?
+      options:
+        - algenta
+        - codna
+        - telys
+        - sqai
+        - accounts (billing / login / devices)
+        - docs
+        - not sure
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true

@@ -1,0 +1,32 @@
+name: Feature request
+description: Suggest a capability that doesn't exist today, in any thyn-ai product.
+title: "[feature] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Which product?
+      options:
+        - algenta
+        - codna
+        - telys
+        - sqai
+        - accounts (billing / login / devices)
+        - docs
+        - not sure
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What do you want to be able to do?
+      description: Describe the use case, not just the API/CLI shape you'd guess at.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why isn't an existing feature sufficient?
+    validations:
+      required: false
