@@ -1,0 +1,12 @@
+thyn-ai/feedback
+Copyright the thyn-ai/feedback contributors and Algenta
+
+This product is licensed under the Apache License, Version 2.0. See LICENSE
+for the full license text.
+
+This repository contains only the public issue-intake templates, community
+documents and repository automation for the Algenta family and the Codna
+GitHub App. It ships no code. The products it takes reports for -- the
+Algenta Engine, Codna, Telys, Sqai and the accounts portal -- are separately
+distributed and are not included here; each is subject to its own license,
+not Apache-2.0.

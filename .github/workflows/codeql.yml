@@ -1,0 +1,61 @@
+# CodeQL (advanced setup) -- per pull request, on push to main, and weekly.
+#
+# Language: `actions` only. This repository ships no application code -- it
+# holds issue templates, community documents and these workflow files -- so
+# the workflows themselves are the only thing CodeQL has to analyse here. If
+# code is ever added, extend this job to the matching languages; the README
+# badge reads the workflow's status, not the language list, so it keeps
+# working.
+#
+# Prerequisite: GitHub's CodeQL *default setup* must be switched off for this
+# repository. While it is on, GitHub rejects every SARIF upload from an
+# advanced configuration ("CodeQL analyses from advanced configurations
+# cannot be processed when the default setup is enabled").
+name: CodeQL
+
+"on":
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "23 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One run per ref. Only pull-request runs are cancelled by a newer push to the
+# same PR; runs on main (push, weekly schedule, dispatch) always complete, so a
+# push that lands during the scheduled scan can never leave main without a
+# fresh SARIF upload.
+concurrency:
+  group: codeql-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  analyze:
+    name: CodeQL (actions)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      actions: read
+      contents: read
+      packages: read
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        with:
+          languages: actions
+          build-mode: none
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        with:
+          category: /language:actions
