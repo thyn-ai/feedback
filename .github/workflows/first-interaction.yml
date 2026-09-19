@@ -1,0 +1,48 @@
+# Greets first-time reporters and first-time PR contributors, pointing them
+# at the contributing guide: what a report needs so it can be routed and
+# fixed, and, for PRs, the checklist for this repository's templates and
+# workflows.
+#
+# pull_request_target is deliberate: on the plain pull_request trigger the
+# GITHUB_TOKEN is read-only for fork PRs, so the welcome comment could not be
+# posted. This is safe here because the workflow checks out nothing and
+# executes no contributor code -- the action only posts a comment. The write
+# scopes it needs (issues, pull-requests) are granted to the one job that
+# posts, not at the top level.
+name: First interaction
+
+"on":
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  contents: read
+
+jobs:
+  greet:
+    name: Welcome first-time contributors
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/first-interaction@1c4688942c71f71d4f5502a26ea67c331730fa4d # v3.1.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_message: >-
+            Thanks for filing your first report in thyn-ai/feedback! A maintainer
+            will triage it as soon as possible. Make sure the report says which
+            product it is about -- that is what routes it -- and never include
+            secrets or account details: this repository is public.
+            [CONTRIBUTING.md](https://github.com/thyn-ai/feedback/blob/main/CONTRIBUTING.md)
+            explains what happens next and what the triage labels mean.
+          pr_message: >-
+            Thanks for opening your first pull request in thyn-ai/feedback!
+            Please make sure CI is green and that the change follows
+            [CONTRIBUTING.md](https://github.com/thyn-ai/feedback/blob/main/CONTRIBUTING.md)
+            -- in particular, keep the issue-form field ids stable and every
+            action pinned to a full commit SHA. A maintainer will review it
+            shortly.

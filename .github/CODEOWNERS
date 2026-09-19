@@ -1,0 +1,24 @@
+# See https://docs.github.com/articles/about-codeowners for syntax.
+# Order matters — later matches take precedence, so the most specific rules
+# are listed after the tree-wide rule.
+#
+# NOTE: mirrors the same note in thyn-ai/algenta-sdk's CODEOWNERS. The
+# thyn-ai org has exactly one member today (@0xamlab) and no teams. Every
+# entry below is that one real account, not a placeholder — replace with a
+# real team (@thyn-ai/feedback-maintainers) as soon as a second maintainer
+# joins. Until then, do NOT turn on the ruleset's "Require review from Code
+# Owners" — GitHub blocks a PR author from approving their own PR, so a
+# solo-owner CODEOWNERS with that setting on would make every PR unmergeable
+# by the only person who can open one.
+
+# Everything in this repository: the templates, the community documents and
+# the automation. There is no code here to split ownership over.
+* @0xamlab
+
+# The issue forms are the intake contract: codna's `report` command and the
+# codna_report_bug MCP tool mirror bug_report.yml's fields and pre-fill its
+# `what-happened` field by id, so a change here is reviewed with them in mind.
+/.github/ISSUE_TEMPLATE/ @0xamlab
+
+# Workflow files are as security-sensitive as the code they run.
+/.github/workflows/ @0xamlab

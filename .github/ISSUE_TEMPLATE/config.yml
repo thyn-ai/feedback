@@ -1,10 +1,14 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability
-    url: https://github.com/thyn-ai/codna/security/policy
+    url: https://github.com/thyn-ai/feedback/security/advisories/new
     about: >-
-      Do NOT file a public issue for a security vulnerability. Report it privately per the
-      product's own SECURITY.md (codna, algenta-sdk) or email security@thyn.ai.
+      Do NOT file a public issue for a security vulnerability. Use this repository's private
+      reporting form, the affected product repository's SECURITY.md, or email security@algenta.ai.
+  - name: Questions and discussion
+    url: https://github.com/thyn-ai/feedback/discussions
+    about: >-
+      Not a bug? Ask questions, share ideas and compare notes in Discussions.
   - name: Enterprise / paying customer support
     url: https://accounts.thyn.ai/account
     about: >-
