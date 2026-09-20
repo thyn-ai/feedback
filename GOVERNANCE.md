@@ -1,8 +1,9 @@
 # Governance
 
 This document describes how decisions are made for `thyn-ai/feedback`, the
-public issue intake for the Algenta family and the Codna GitHub App. It is
-intentionally lightweight and will evolve as the contributor community grows.
+public issue intake for the open-source tooling around Algenta and for the
+Codna GitHub App. It is intentionally lightweight and will evolve as the
+contributor community grows.
 
 ## Roles
 

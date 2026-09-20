@@ -1,10 +1,10 @@
 # Security Policy
 
-This repository is the public issue intake for the Algenta family and the
-Codna GitHub App. It holds issue templates, community documents, and the
-GitHub Actions workflows that maintain them — no application code, no
-packages, no running service. We still take its security seriously and
-appreciate responsible disclosure from the community.
+This repository is the public issue intake for the open-source tooling
+around Algenta and for the Codna GitHub App. It holds issue templates,
+community documents, and the GitHub Actions workflows that maintain them —
+no application code, no packages, no running service. We still take its
+security seriously and appreciate responsible disclosure from the community.
 
 ## Supported versions
 
@@ -67,7 +67,7 @@ public, this repository's private channels above are the way in:
 | Algenta framework integrations | [thyn-ai/algenta-integrations — SECURITY.md](https://github.com/thyn-ai/algenta-integrations/blob/main/SECURITY.md) |
 | mojo-kernels (`bm25-mojo`, `cclib-mojo`, `fuse-mojo`) | [thyn-ai/mojo-kernels — SECURITY.md](https://github.com/thyn-ai/mojo-kernels/blob/main/SECURITY.md) |
 | security-toolchain | [thyn-ai/security-toolchain — SECURITY.md](https://github.com/thyn-ai/security-toolchain/blob/main/SECURITY.md) |
-| Algenta Engine, Codna (GitHub App, CLI, MCP server), Telys, Sqai, the accounts portal | Privately, through this repository's **Security → Report a vulnerability** tab or `security@algenta.ai` |
+| The Algenta engine, Codna (GitHub App, CLI, MCP server), Telys, Sqai, the accounts portal | Privately, through this repository's **Security → Report a vulnerability** tab or `security@algenta.ai` |
 
 **Also out of scope:** third-party dependencies (report those upstream; we
 still want to hear how they affect Algenta), and social-engineering,
