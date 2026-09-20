@@ -5,8 +5,8 @@ This product is licensed under the Apache License, Version 2.0. See LICENSE
 for the full license text.
 
 This repository contains only the public issue-intake templates, community
-documents and repository automation for the Algenta family and the Codna
-GitHub App. It ships no code. The products it takes reports for -- the
-Algenta Engine, Codna, Telys, Sqai and the accounts portal -- are separately
-distributed and are not included here; each is subject to its own license,
-not Apache-2.0.
+documents and repository automation for the open-source tooling around
+Algenta and for the Codna GitHub App. It ships no code. The products it
+takes reports for -- the Algenta engine, Codna, Telys, Sqai and the accounts
+portal -- are separately distributed and are not included here; each is
+subject to its own license, not Apache-2.0.
